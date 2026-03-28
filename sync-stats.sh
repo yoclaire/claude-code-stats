@@ -55,6 +55,7 @@ if git diff --cached --quiet; then
   echo "No changes to commit"
 else
   git commit -m "stats: update ${INSTANCE} $(date +%Y-%m-%d)"
+  git pull --rebase
   git push
   echo "Pushed updated stats"
 fi

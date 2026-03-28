@@ -1,9 +1,9 @@
 {
   "instanceName": "local",
   "lastUpdated": "2026-03-27",
-  "totalTokens": 34415843,
+  "totalTokens": 176464,
   "modelUsage": {
-    "claude-opus-4-6": 34415843
+    "claude-opus-4-6": 176464
   },
   "dailyTokens": [
     {

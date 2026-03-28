@@ -1,0 +1,34 @@
+{
+  "instanceName": "local",
+  "lastUpdated": "2026-03-27",
+  "totalTokens": 34415843,
+  "modelUsage": {
+    "claude-opus-4-6": 34415843
+  },
+  "dailyTokens": [
+    {
+      "date": "2026-03-10",
+      "tokens": 561
+    },
+    {
+      "date": "2026-03-11",
+      "tokens": 126995
+    },
+    {
+      "date": "2026-03-12",
+      "tokens": 17107
+    },
+    {
+      "date": "2026-03-18",
+      "tokens": 12816
+    },
+    {
+      "date": "2026-03-19",
+      "tokens": 2079
+    },
+    {
+      "date": "2026-03-25",
+      "tokens": 16906
+    }
+  ]
+}

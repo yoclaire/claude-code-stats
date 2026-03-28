@@ -30,11 +30,11 @@ echo "Syncing stats for instance: $INSTANCE"
 jq --arg name "$INSTANCE" --arg date "$(date +%Y-%m-%d)" '{
   instanceName: $name,
   lastUpdated: $date,
-  totalTokens: ([.modelUsage[] | (.inputTokens // 0) + (.outputTokens // 0) + (.cacheReadInputTokens // 0) + (.cacheCreationInputTokens // 0)] | add),
+  totalTokens: ([.modelUsage[] | (.inputTokens // 0) + (.outputTokens // 0)] | add),
   modelUsage: (
     .modelUsage | to_entries | map({
       key: .key,
-      value: ((.value.inputTokens // 0) + (.value.outputTokens // 0) + (.value.cacheReadInputTokens // 0) + (.value.cacheCreationInputTokens // 0))
+      value: ((.value.inputTokens // 0) + (.value.outputTokens // 0))
     }) | from_entries
   ),
   dailyTokens: [

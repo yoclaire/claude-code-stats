@@ -27,9 +27,9 @@ export function buildHeatmapGrid(
 ): HeatmapGrid & { recentTokens: number } {
   const todayDate = new Date(today + "T00:00:00");
 
-  // Start date: 6 months ago, rolled back to the previous Monday
+  // Start date: 1 year ago, rolled back to the previous Monday
   const startDate = new Date(todayDate);
-  startDate.setMonth(startDate.getMonth() - 6);
+  startDate.setFullYear(startDate.getFullYear() - 1);
   // Roll back to Monday
   while (mondayBasedDay(startDate) !== 0) {
     startDate.setDate(startDate.getDate() - 1);

@@ -93,7 +93,7 @@ export function renderSvg(stats: AggregatedStats, today: string): string {
   <!-- Right panel -->
   <g transform="translate(${HEATMAP_X}, ${HEATMAP_Y})">
     <!-- Summary -->
-    <text x="0" y="-14" fill="#c9d1d9" font-family="monospace" font-size="10">${recentFormatted} tokens in the last 6 months</text>
+    <text x="0" y="-14" fill="#c9d1d9" font-family="monospace" font-size="10">${recentFormatted} tokens in the last year</text>
 
     <!-- Month labels -->
     <g transform="translate(${DAY_LABEL_WIDTH}, 4)">

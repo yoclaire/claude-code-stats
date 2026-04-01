@@ -7,12 +7,12 @@ describe("buildHeatmapGrid", () => {
   // 2026-03-27 is a Friday (dayOfWeek=4, 0-indexed Mon=0)
   const today = "2026-03-27";
 
-  it("returns 7 rows x N weeks covering 6 months", () => {
+  it("returns 7 rows x N weeks covering 1 year", () => {
     const grid = buildHeatmapGrid([], today);
-    // 6 months back from 2026-03-27 = ~2025-09-27
-    // Should have ~26 weeks
-    expect(grid.weekCount).toBeGreaterThanOrEqual(25);
-    expect(grid.weekCount).toBeLessThanOrEqual(27);
+    // 1 year back from 2026-03-27 = ~2025-03-27
+    // Should have ~53 weeks
+    expect(grid.weekCount).toBeGreaterThanOrEqual(52);
+    expect(grid.weekCount).toBeLessThanOrEqual(54);
   });
 
   it("assigns correct dayOfWeek (0=Mon, 6=Sun)", () => {
@@ -53,8 +53,8 @@ describe("buildHeatmapGrid", () => {
   it("generates month labels", () => {
     const grid = buildHeatmapGrid([], today);
     const labels = grid.monthLabels.map((m) => m.label);
-    // Should include months in the 6-month window
-    expect(labels).toContain("Oct");
+    // Should include months in the 1-year window
+    expect(labels).toContain("Apr");
     expect(labels).toContain("Mar");
   });
 
@@ -62,7 +62,7 @@ describe("buildHeatmapGrid", () => {
     const daily: DailyTokens[] = [
       { date: "2026-03-20", tokens: 1000 },
       { date: "2026-03-21", tokens: 2000 },
-      { date: "2025-01-01", tokens: 99999 }, // outside window
+      { date: "2024-01-01", tokens: 99999 }, // outside window
     ];
     const { recentTokens } = buildHeatmapGrid(daily, today);
     expect(recentTokens).toBe(3000);

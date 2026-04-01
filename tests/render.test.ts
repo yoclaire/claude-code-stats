@@ -69,6 +69,6 @@ describe("renderSvg", () => {
 
   it("includes the recent tokens summary", () => {
     const svg = renderSvg(stats, "2026-03-27");
-    expect(svg).toMatch(/tokens in the last 6 months/);
+    expect(svg).toMatch(/tokens in the last year/);
   });
 });
